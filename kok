@@ -1,0 +1,27 @@
+import random
+import time
+from playsound import playsound  # Це модуль для відтворення звуку, встановіть його через pip
+
+# Функція для відтворення ноти з використанням вбудованого звуку
+def play_note(note):
+    print(f"Playing note: {note}")
+    # Ваш код для відтворення ноти тут
+    # Наприклад, використання playsound для відтворення аудіофайлу
+    # playsound("note_c.wav")  # Приклад, де "note_c.wav" - це файл звуку ноти
+
+# Основна функція генерації музики
+def generate_music():
+    # Список нот, які можна використовувати
+    notes = ['C', 'D', 'E', 'F', 'G', 'A', 'B']
+
+    # Генеруємо випадкову мелодію
+    melody = [random.choice(notes) for _ in range(10)]
+
+    # Відтворюємо мелодію нота за нотою
+    for note in melody:
+        play_note(note)
+        # Затримка між нотами для створення ритму
+        time.sleep(0.5)
+
+# Виклик функції для генерації музики
+generate_music()
